@@ -31,3 +31,12 @@ h6 {
 #candy-submit {
 	width: 100%;
 }
+
+.candy-step {
+	color: white;
+}
+
+.candy-stat {
+	text-align: center;
+	color: white;
+}
