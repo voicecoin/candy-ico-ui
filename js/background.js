@@ -48,9 +48,9 @@ function init() {
   document.body.appendChild(canvas);
 
   var cv = document.getElementsByTagName('canvas')[0];
-cv.style.position = "fixed";
-cv.style.top = 0;
-cv.style.zIndex = -1;
+  cv.style.position = "fixed";
+  cv.style.top = 0;
+  cv.style.zIndex = -1;
 
   context = canvas.getContext('2d');
 
@@ -66,8 +66,10 @@ cv.style.zIndex = -1;
 
   context.putImageData(imageData, 0, 0);
 
-  btStart = document.getElementById('btStartAudioVisualization');
-  btStart.addEventListener('mousedown', userStart, false);
+  animate();
+
+  // btStart = document.getElementById('btStartAudioVisualization');
+  // btStart.addEventListener('mousedown', userStart, false);
 
 };
 
