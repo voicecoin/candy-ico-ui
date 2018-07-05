@@ -13,6 +13,10 @@ h6 {
 	text-align: center;
 }
 
+#vc-logo a {
+	text-decoration: none;
+}
+
 #vc-logo h1 {
 	font-weight: 900;
 	font-family: Cabin;
