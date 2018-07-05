@@ -24,6 +24,14 @@ h6 {
 	width: 100px;
 }
 
+.vc-telegram {
+	text-align: center;
+}
+
+.vc-telegram a {
+	text-decoration: none;
+}
+
 .candy-desc p {
 	color: white;
 }
