@@ -1,0 +1,33 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Cabin, "Microsoft YaHei", 微软雅黑, STXihei, 华文细黑, sans-serif;
+	font-weight: 400;
+}
+
+#vc-logo {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#vc-logo h1 {
+	font-weight: 900;
+	font-family: Cabin;
+	font-size: 36px;
+	color: white;
+}
+
+#vc-logo img {
+	width: 100px;
+}
+
+.candy-desc p {
+	color: white;
+}
+
+#candy-submit {
+	width: 100%;
+}
