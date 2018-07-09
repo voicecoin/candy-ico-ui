@@ -1,4 +1,4 @@
-var url = "http://voicecoin.io/v1/Airdrop";
+var url = "https://voicecoin.io/v1/Airdrop";
 
 function sendCandy() {
 	var email = $("#candy-email").val();
