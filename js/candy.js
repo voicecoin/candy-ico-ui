@@ -48,7 +48,7 @@ $(function () {
  * Adds address validation into jQuery
  */
 jQuery.validator.addMethod("isEthAddress", function (address, element) {
-	return this.optional(element) || isChecksumAddress(address);
+	return this.optional(element) || isAddress(address);
 }, "* Amount must be greater than zero");
 
 /**
