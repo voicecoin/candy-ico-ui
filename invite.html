@@ -21,23 +21,24 @@
 
 <body>
   <!-- <a id="btStartAudioVisualization" class="bt">Start Audio Visualization</a> -->
-  <div class="container">
+  <div class="container" id="vc-candy">
+    <button id="candy-lang" class="btn btn-success" v-on:click="changeLang">{{vc[lang].lang}}</button>
     <div id="vc-logo" class="mt-5">
-      <a href="http://voicechain.io/" target="_blank">
+      <a :href="vc[lang].web_link" target="_blank">
         <img class="mb-1" src="img/logo-2.png" alt="Voicechain">
-        <h1>VOICECHAIN</h1>
+        <h1>{{vc[lang].title}}</h1>
       </a>
     </div>
     <div class="row mt-4">
       <div class="col-lg-8 offset-lg-2 candy-desc">
         <p>
-          一场颠覆性的语音革命已经到来
+          {{vc[lang].p1}}
         </p>
         <p>
-          我们首当其冲提出：区块链解决方案来支持语音互联网。我们创造并实现一个真正意义上的说比写快的语音区块链新生代！
+          {{vc[lang].p2}}
         </p>
         <p>
-          全球化开启语音万维网新纪元，开发者一站式发布语音服务，全世界的公众可以免费享用任何语音服务，实现了真正意义上的语音服务共享。任何用户，可以在世界的任何地方，与已注册的语音服务通话。 智能设备制造商将不再需要请开发者注册他们的语音服务。该方案节省了大量开发资源的同时，也为用户提供了更便捷的方式来浏览开放的语音万维网。随着传统的基于浏览器的网站演变成语音服务，传统域名系统将会进化成去中心化的语音域名系统，加密货币将成为语音服务支付的全球标准。非同凡响，不负众望，就是我们要完成的底层技术。
+          {{vc[lang].p3}}
         </p>
       </div>
     </div>
@@ -45,43 +46,42 @@
       <div class="col-lg-8 offset-lg-2">
         <ol>
           <li class="mb-3">
-            请到填写的邮箱内确认参加活动，才可获得奖励!
+            {{vc[lang].invite.p1}}
           </li>
           <li class="mb-3">
-            <a href="https://t.me/voicecoin" target="_blank">加入电报群</a>（需科学上网）
+            <a href="https://t.me/voicecoin" target="_blank">{{vc[lang].invite.telegram1}}</a>{{vc[lang].invite.telegram2}}
           </li>
           <li class="mb-3">
-            把以下验证码发到电报群里即可获10个VC!
+            {{vc[lang].invite.p2}}
             <form>
               <div class="input-group mt-3">
                 <input id="candy-invite-code" type="text" class="form-control" placeholder="验证码" aria-label="验证码" aria-describedby="basic-addon2">
                 <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button" onclick="copyToClipboard()">复制</button>
+                  <button class="btn btn-outline-secondary" type="button" onclick="copyToClipboard()">{{vc[lang].invite.copy}}</button>
                 </div>
               </div>
             </form>
           </li>
           <li>
-            将邀请链接分享给好友，每成功推荐一个好友入群，即可再额外获得10个VC，邀请奖励上限500VC！（申请无限奖励上限特权通道，请加小助手微信：语音链）
+            {{vc[lang].invite.p3}}
           </li>
         </ol>
       </div>
     </div>
     <div class="row mt-4">
       <div class="col-lg-3 offset-lg-3">
-        <button type="submit" class="btn btn-success mb-2" id="candy-submit">复制链接</button>
+        <button type="submit" class="btn btn-success mb-2" id="candy-submit">{{vc[lang].invite.copy_link}}</button>
       </div>
       <div class="col-lg-3">
-        <button type="submit" class="btn btn-success" id="candy-submit">保存二维码</button>
+        <button type="submit" class="btn btn-success" id="candy-submit">{{vc[lang].invite.save_qr}}</button>
       </div>
     </div>
     <div class="candy-stat mt-4">
-
       <p>
-        已经成功邀请(人次) 0
+        {{vc[lang].invite.invitation}} 0
       </p>
       <p>
-        已经赚取VC(枚数) 10.000000000000000000
+        {{vc[lang].invite.get_vc}} 10.000000000000000000
       </p>
     </div>
   </div>
