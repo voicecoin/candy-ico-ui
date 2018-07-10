@@ -20,26 +20,27 @@
 
 <body>
   <!-- <a id="btStartAudioVisualization" class="bt">Start Audio Visualization</a> -->
-  <div class="container">
+  <div class="container" id="vc-candy">
+    <button id="candy-lang" class="btn btn-success" v-on:click="changeLang">{{vc[lang].index.lang}}</button>
     <div id="vc-logo" class="vc-logo mt-5">
-      <a href="http://voicechain.io/" target="_blank">
+      <a :href="vc[lang].index.web_link" target="_blank">
         <img class="mb-1" src="img/logo-2.png" alt="Voicechain">
-        <h1>VOICECHAIN</h1>
+        <h1>{{vc[lang].index.title}}</h1>
       </a>
     </div>
     <div class="vc-telegram">
-      <a href="https://t.me/voicecoin" target="_blank">加入电报群（需科学上网）</a>
+      <a href="https://t.me/voicecoin" target="_blank">{{vc[lang].index.telegram}}</a>
     </div>
     <div class="row mt-4">
       <div class="col-lg-8 offset-lg-2 candy-desc">
         <p>
-          一场颠覆性的语音革命已经到来
+          {{vc[lang].index.p1}}
         </p>
         <p>
-          我们首当其冲提出：区块链解决方案来支持语音互联网。我们创造并实现一个真正意义上的说比写快的语音区块链新生代！
+          {{vc[lang].index.p2}}
         </p>
         <p>
-          全球化开启语音万维网新纪元，开发者一站式发布语音服务，全世界的公众可以免费享用任何语音服务，实现了真正意义上的语音服务共享。任何用户，可以在世界的任何地方，与已注册的语音服务通话。 智能设备制造商将不再需要请开发者注册他们的语音服务。该方案节省了大量开发资源的同时，也为用户提供了更便捷的方式来浏览开放的语音万维网。随着传统的基于浏览器的网站演变成语音服务，传统域名系统将会进化成去中心化的语音域名系统，加密货币将成为语音服务支付的全球标准。非同凡响，不负众望，就是我们要完成的底层技术。
+          {{vc[lang].index.p3}}
         </p>
       </div>
     </div>
@@ -47,15 +48,15 @@
       <div class="col-lg-8 offset-lg-2">
         <form id="candy-form" action="javascript:sendCandy()">
           <div class="form-group">
-            <input type="text" class="form-control" id="candy-eth" name="address" aria-describedby="emailHelp" placeholder="输入ETH钱包地址">
+            <input type="text" class="form-control" id="candy-eth" name="address" aria-describedby="emailHelp" :placeholder="vc[lang].index.eth">
           </div>
           <div class="form-group">
-            <input type="email" class="form-control" id="candy-email" name="email" aria-describedby="emailHelp" placeholder="输入邮箱地址">
+            <input type="email" class="form-control" id="candy-email" name="email" aria-describedby="emailHelp" :placeholder="vc[lang].index.email">
           </div>
           <!-- <div class="form-group candy-recaptcha">
             <div class="g-recaptcha" data-sitekey="6Lew5GIUAAAAAHfHbNl2Mt3-oq6yj5tI65GyAWkf"></div>
           </div> -->
-          <button type="submit" class="btn btn-success" id="candy-submit">领取糖果</button>
+          <button type="submit" class="btn btn-success" id="candy-submit">{{vc[lang].index.submit}}</button>
         </form>
       </div>
     </div>
