@@ -73,6 +73,9 @@ var app = new Vue({
 				this.lang = 'zh';
 				setCookie('vc-lang', 'zh', 30);
 			}
+			if (refreshValiation) {
+				refreshValiation(this.lang);
+			}
 		},
 		goAnchor(selector) {
 			var anchor = this.$el.querySelector(selector);

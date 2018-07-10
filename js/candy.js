@@ -5,22 +5,50 @@ function sendCandy() {
 	var eth = $("#candy-eth").val();
 
 	$.post(url, {
-		email: email,
-		address: eth
-	},
+			email: email,
+			address: eth
+		},
 		function (returnedData) {
 			console.log(returnedData);
 			window.location.href = "invite.html?code=" + returnedData;
 		}).fail(function () {
-			console.log("error");
-		});
+		console.log("error");
+	});
+}
+
+var messages = {
+	zh: {
+		email: {
+			required: "电子邮箱不能为空",
+			email: "请输入有效的电子邮箱",
+		},
+		address: {
+			required: "ETH钱包地址不能为空",
+			isEthAddress: "请输入有效的ETH钱包地址",
+		},
+	},
+	en: {
+		email: {
+			required: "Email address is required.",
+			email: "Please enter a valid email address.",
+		},
+		address: {
+			required: "ETH wallet address is required.",
+			isEthAddress: "Please enter a valid ETH wallet address.",
+		},
+	}
 }
 
 /**
  * Form validation
  */
 $(function () {
-	$("#candy-form").validate({
+	refreshValiation(language);
+});
+
+var refreshValiation = function (lang) {
+	$('#candy-form').removeData('validator');
+	var validator = $("#candy-form").validate({
 		rules: {
 			email: {
 				required: true,
@@ -33,16 +61,17 @@ $(function () {
 		},
 		messages: {
 			email: {
-				required: "电子邮箱不能为空",
-				email: "请输入有效的电子邮箱",
+				required: messages[lang].email.required,
+				email: messages[lang].email.email,
 			},
 			address: {
-				required: "ETH钱包地址不能为空",
-				isEthAddress: "请输入有效的ETH钱包地址",
+				required: messages[lang].address.required,
+				isEthAddress: messages[lang].address.isEthAddress,
 			},
 		},
 	});
-});
+	validator.resetForm();
+}
 
 /**
  * Adds address validation into jQuery
