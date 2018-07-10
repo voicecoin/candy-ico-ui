@@ -34,9 +34,10 @@ var app = new Vue({
 		lang: language,
 		vc: {
 			zh: {
+				title: "VOICECHAIN",
+				web_link: "https://www.voicechain.io/",
+				lang: "English",
 				index: {
-					title: "VOICECHAIN",
-					web_link: "https://www.voicechain.io/",
 					telegram: "加入电报群（需科学上网）",
 					p1: "一场颠覆性的语音革命已经到来！",
 					p2: "我们首当其冲提出：区块链解决方案来支持语音互联网。我们创造并实现一个真正意义上的说比写快的语音区块链新生代！",
@@ -44,13 +45,13 @@ var app = new Vue({
 					eth: "输入ETH钱包地址",
 					email: "输入邮箱地址",
 					submit: "领取糖果",
-					lang: "ENG",
 				},
 			},
 			en: {
+				title: "VOICECOIN",
+				web_link: "https://www.voicecoin.io/",
+				lang: "简体中文",
 				index: {
-					title: "VOICECOIN",
-					web_link: "https://www.voicecoin.io/",
 					telegram: "Join Voicecoin Telegram",
 					p1: "Welcome Voicecoin Airdrop.",
 					p2: "",
@@ -58,7 +59,6 @@ var app = new Vue({
 					eth: "Enter ETH Address",
 					email: "Enter Email",
 					submit: "SUBMIT",
-					lang: "简体中文",
 				},
 			}
 		},

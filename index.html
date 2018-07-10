@@ -24,15 +24,15 @@
 <body>
   <!-- <a id="btStartAudioVisualization" class="bt">Start Audio Visualization</a> -->
   <div class="container" id="vc-candy">
-    <button id="candy-lang" class="btn btn-success" v-on:click="changeLang">{{vc[lang].index.lang}}</button>
+    <button id="candy-lang" class="btn btn-success" v-on:click="changeLang">{{vc[lang].lang}}</button>
     <div id="vc-logo" class="vc-logo mt-5">
-      <a :href="vc[lang].index.web_link" target="_blank">
+      <a :href="vc[lang].web_link" target="_blank">
         <img class="mb-1" src="img/logo-2.png" alt="Voicechain">
-        <h1>{{vc[lang].index.title}}</h1>
+        <h1>{{vc[lang].title}}</h1>
       </a>
     </div>
     <div class="vc-telegram">
-      <a href="https://t.me/voicecoin" target="_blank">{{vc[lang].index.telegram}}</a>
+      <a href="https://t.me/voicecoin" target="_blank">{{vc[lang].telegram}}</a>
     </div>
     <div class="row mt-4">
       <div class="col-lg-8 offset-lg-2 candy-desc">
