@@ -1,19 +1,19 @@
-var url = "https://voicecoin.io/v1/Airdrop";
+var url = "https://voicechain.io/v1/Airdrop";
 
 function sendCandy() {
 	var email = $("#candy-email").val();
 	var eth = $("#candy-eth").val();
 
 	$.post(url, {
-			email: email,
-			address: eth
-		},
+		email: email,
+		address: eth
+	},
 		function (returnedData) {
 			console.log(returnedData);
-			window.location.href = "invite.html";
+			window.location.href = "invite.html?code=" + returnedData;
 		}).fail(function () {
-		console.log("error");
-	});
+			console.log("error");
+		});
 }
 
 /**
