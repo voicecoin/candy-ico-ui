@@ -23,7 +23,10 @@ var data;
 
 var mouseActive = false;
 var mouseDown = false;
-var mousePos = { x: 0, y: 0 };
+var mousePos = {
+  x: 0,
+  y: 0
+};
 
 var fov = 250;
 
@@ -40,10 +43,6 @@ var particleDistanceTop = 10;
 function init() {
 
   canvas = document.createElement('canvas');
-  canvas.addEventListener('mousedown', mouseDownHandler, false);
-  canvas.addEventListener('mousemove', mouseMoveHandler, false);
-  canvas.addEventListener('mouseenter', mouseEnterHandler, false);
-  canvas.addEventListener('mouseleave', mouseLeaveHandler, false);
 
   document.body.appendChild(canvas);
 
@@ -62,54 +61,13 @@ function init() {
   addParticles(particlesSky, -1);
 
   render();
-  render();
 
   context.putImageData(imageData, 0, 0);
 
   animate();
 
-  // btStart = document.getElementById('btStartAudioVisualization');
-  // btStart.addEventListener('mousedown', userStart, false);
-
+ 
 };
-
-//---
-
-function userStart() {
-
-  btStart.removeEventListener('mousedown', userStart);
-  btStart.style.display = 'none';
-
-  audioSetup();
-  animate();
-
-};
-
-//---
-
-function audioSetup() {
-
-  audio = new Audio();
-  audio.src = 'http://nkunited.de/ExternalImages/jsfiddle/audio/Atlantis-Audionautix-_192kbit_AAC_.mp3';
-  audio.controls = false;
-  audio.loop = true;
-  audio.autoplay = true;
-  audio.crossOrigin = 'anonymous';
-
-  audioContext = new (window.AudioContext || window.webkitAudioContext)();
-
-  analyser = audioContext.createAnalyser();
-  analyser.connect(audioContext.destination);
-  analyser.smoothingTimeConstant = 0.75;
-  analyser.fftSize = 512 * 32;//circleSegments * 32;
-  analyserBufferLength = analyser.frequencyBinCount;
-
-  audioSrc = audioContext.createMediaElementSource(audio);
-  audioSrc.connect(analyser);
-
-};
-
-//---
 
 function clearImageData() {
 
@@ -248,7 +206,10 @@ function onResize() {
   w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
   h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-  center2D = { x: w / 2, y: h / 2 };
+  center2D = {
+    x: w / 2,
+    y: h / 2
+  };
 
   canvas.width = w;
   canvas.height = h;
@@ -263,63 +224,9 @@ function onResize() {
 
 //---
 
-function mouseDownHandler(event) {
-
-  if (audio.paused) {
-
-    audio.play();
-
-  } else {
-
-    audio.pause();
-
-  }
-
-};
-
-function mouseEnterHandler(event) {
-
-  mouseActive = true;
-
-};
-
-function mouseLeaveHandler(event) {
-
-  mouseActive = false;
-
-  mousePos.x = w / 2;
-
-  mouseDown = false;
-
-};
-
-function mouseMoveHandler(event) {
-
-  mousePos = getMousePos(canvas, event);
-
-};
-
-function getMousePos(canvas, event) {
-
-  var rect = canvas.getBoundingClientRect();
-
-  return { x: event.clientX - rect.left, y: event.clientY - rect.top };
-
-};
-
-//---
-
 function render() {
 
   var frequencySource;
-
-  if (analyser) {
-
-    frequencySource = new Uint8Array(analyser.frequencyBinCount);
-
-    analyser.getByteFrequencyData(frequencySource);
-
-  }
 
   //---
 
@@ -376,7 +283,7 @@ function render() {
 
         var p = particlesRow[j - 1];
 
-        lineColorValue = Math.round(i / l * 155);//255
+        lineColorValue = Math.round(i / l * 155); //255
 
         drawLine(particle.x2d | 0, particle.y2d | 0, p.x2d | 0, p.y2d | 0, 0, lineColorValue, 0, 255);
 
@@ -436,7 +343,7 @@ function render() {
       if (analyser) {
 
         var frequency = frequencySource[particle.index];
-        var frequencyAdd = frequency / 10;//circle.frequencyFactor;
+        var frequencyAdd = frequency / 10; //circle.frequencyFactor;
 
         particle.y = -frequencyAdd - particleDistanceTop;
 
@@ -458,7 +365,7 @@ function render() {
 
         var p = particlesRow[j - 1];
 
-        lineColorValue = Math.round(i / l * 255);//255
+        lineColorValue = Math.round(i / l * 255); //255
 
         drawLine(particle.x2d | 0, particle.y2d | 0, p.x2d | 0, p.y2d | 0, 0, Math.round(lineColorValue / 2), lineColorValue, 255);
 
