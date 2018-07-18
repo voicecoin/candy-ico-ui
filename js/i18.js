@@ -57,6 +57,7 @@ var app = new Vue({
 					save_qr: "保存二维码",
 					invitation: "已经成功邀请(人次)",
 					get_vc: "已经赚取VC(枚数)",
+					code: "验证码",
 				}
 			},
 			en: {
@@ -83,6 +84,7 @@ var app = new Vue({
 					save_qr: "Save QR Code",
 					invitation: "successful Invatation: ",
 					get_vc: "Total VC rewards: ",
+					code: "Code",
 				}
 			}
 		},

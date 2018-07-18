@@ -55,7 +55,7 @@
             {{vc[lang].invite.p2}}
             <form>
               <div class="input-group mt-3">
-                <input id="candy-invite-code" type="text" class="form-control" placeholder="验证码" aria-label="验证码" aria-describedby="basic-addon2">
+                <input id="candy-invite-code" type="text" class="form-control" :placeholder="vc[lang].invite.code" :aria-label="vc[lang].invite.code" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                   <button class="btn btn-outline-light" type="button" onclick="copyToClipboard()">{{vc[lang].invite.copy}}</button>
                 </div>
