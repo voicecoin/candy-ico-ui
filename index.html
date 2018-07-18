@@ -24,7 +24,7 @@
 <body>
   <!-- <a id="btStartAudioVisualization" class="bt">Start Audio Visualization</a> -->
   <div class="container" id="vc-candy">
-    <button id="candy-lang" class="btn btn-success mt-3" v-on:click="changeLang">{{vc[lang].lang}}</button>
+    <button id="candy-lang" class="btn btn-light mt-3" v-on:click="changeLang">{{vc[lang].lang}}</button>
     <div id="vc-logo" class="vc-logo mt-5">
       <a :href="vc[lang].web_link" target="_blank">
         <img class="mb-1" src="img/logo-2.png" alt="Voicechain">
@@ -59,7 +59,7 @@
           <!-- <div class="form-group candy-recaptcha">
             <div class="g-recaptcha" data-sitekey="6Lew5GIUAAAAAHfHbNl2Mt3-oq6yj5tI65GyAWkf"></div>
           </div> -->
-          <button type="submit" class="btn btn-success" id="candy-submit">{{vc[lang].index.submit}}</button>
+          <button type="submit" class="btn btn-light" id="candy-submit">{{vc[lang].index.submit}}</button>
         </form>
       </div>
     </div>
