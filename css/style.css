@@ -56,3 +56,11 @@ h6 {
 .error {
 	color: red;
 }
+
+canvas#welcome-star {
+	position: absolute;
+    top: 0;
+    left: 10px;
+	z-index: -1;
+	/* min-height: 100vh; */
+}
