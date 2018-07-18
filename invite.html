@@ -22,7 +22,7 @@
 <body>
   <!-- <a id="btStartAudioVisualization" class="bt">Start Audio Visualization</a> -->
   <div class="container" id="vc-candy">
-    <button id="candy-lang" class="btn btn-success mt-3" v-on:click="changeLang">{{vc[lang].lang}}</button>
+    <button id="candy-lang" class="btn btn-light mt-3" v-on:click="changeLang">{{vc[lang].lang}}</button>
     <div id="vc-logo" class="mt-5">
       <a :href="vc[lang].web_link" target="_blank">
         <img class="mb-1" src="img/logo-2.png" alt="Voicechain">
@@ -57,7 +57,7 @@
               <div class="input-group mt-3">
                 <input id="candy-invite-code" type="text" class="form-control" placeholder="验证码" aria-label="验证码" aria-describedby="basic-addon2">
                 <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button" onclick="copyToClipboard()">{{vc[lang].invite.copy}}</button>
+                  <button class="btn btn-outline-light" type="button" onclick="copyToClipboard()">{{vc[lang].invite.copy}}</button>
                 </div>
               </div>
             </form>
@@ -70,10 +70,10 @@
     </div>
     <div class="row mt-4">
       <div class="col-lg-3 offset-lg-3">
-        <button type="submit" class="btn btn-success mb-2" id="candy-submit">{{vc[lang].invite.copy_link}}</button>
+        <button type="submit" class="btn btn-light mb-2" id="candy-submit">{{vc[lang].invite.copy_link}}</button>
       </div>
       <div class="col-lg-3">
-        <button type="submit" class="btn btn-success" id="candy-submit">{{vc[lang].invite.save_qr}}</button>
+        <button type="submit" class="btn btn-light" id="candy-submit">{{vc[lang].invite.save_qr}}</button>
       </div>
     </div>
     <div class="candy-stat mt-4">
